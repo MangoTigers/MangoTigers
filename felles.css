@@ -13,7 +13,9 @@ body {
 nav {
     display: block;
     background-color: var(--color2);
-    position: sticky;
+    height: 100px;
+    width: 100%;
+    position: fixed;
     top: 0;
     margin: 0;
 }
@@ -47,5 +49,17 @@ nav ul li a {
     text-decoration: none;
     color: var(--color5);
     display: block;
-    background-color: var(--color3)
+    background-color: var(--color3);
+    padding: 0.5rem 1rem;
+}
+
+.byttFarge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.byttFarge img{
+    cursor: pointer;
+    width: 50px;
+    height: auto;
 }
