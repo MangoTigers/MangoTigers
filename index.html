@@ -12,6 +12,7 @@
         <div class="meny">
             <div class="logo"><a href="#hjem"><img class="logoBilde" src="bilder/logo.png" alt="Logo, Hjemknappen"></a></div>
             <div class="knapper">
+            <div class="menyElement"><a class="menyTekst" href="#velkommen">Velkommen</a></div>
             <div class="menyElement"><a class="menyTekst" href="#kjopsguide">Kjøps guide</a></div>
             <div class="menyElement"><a class="menyTekst" href="#omoss">Om oss</a></div>
             <div class="menyElement"><a class="menyTekst" href="#sporsmal">Spørsmål</a></div>
@@ -23,7 +24,7 @@
 
     <div class="spacer"></div>
 
-    <div class="innholdBoks">
+    <div class="innholdBoks" id="velkommen">
         <h1>Velkommen</h1>
         <div class="innhold">
             <div class="tekst">
@@ -74,24 +75,39 @@
 
     <script>
             // Add offset to anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault(); // Prevent default anchor behavior
+            // Add offset to anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
 
-                    const targetId = this.getAttribute('href'); // Get the target ID (e.g., "#hjem")
-                    const targetElement = document.querySelector(targetId); // Find the target element
+        const targetId = this.getAttribute('href'); // Get the target ID (e.g., "#hjem")
+        const targetElement = document.querySelector(targetId); // Find the target element
 
-                    if (targetElement) {
-                        const offset = 120; // Adjust this value to set the desired offset (in pixels)
-                        const targetPosition = targetElement.offsetTop - offset; // Calculate the target position with offset
+        if (targetElement) {
+            const baseOffset = 120; // Base offset (adjust as needed)
+            const viewportHeight = window.innerHeight; // Get the viewport height
+            const extraOffset = viewportHeight * 0.65; // Calculate 94% of viewport height
+            const meny = document.querySelector('.meny');
 
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth' // Add smooth scrolling
-                        });
-                    }
-                });
+            // Check if .meny has the .scroll class
+            const hasScrollClass = meny.classList.contains('scroll');
+
+            // Calculate the target position
+            let targetPosition = targetElement.offsetTop - baseOffset;
+
+            // Add extra offset if .scroll is not applied
+            if (!hasScrollClass) {
+                targetPosition -= extraOffset;
+            }
+
+            // Scroll to the calculated position
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth' // Add smooth scrolling
             });
+        }
+    });
+});
 
 
         document.querySelector(".byttFarge").addEventListener("click", function() { 

@@ -190,13 +190,18 @@ body.light {
     color: var(--color5);
     padding-bottom: 30px;
     font-size: clamp(1rem, 1.8vw, 1.6rem);
+    padding-right: 30px;
 }
 
 .innhold img {
     width: clamp(100px, 40vw, 600px);
     height: auto;
     border-radius: 5px;
-    
+    marg
+}
+
+.tekst{
+    padding-right: 20px;
 }
 
 .alternativer {
