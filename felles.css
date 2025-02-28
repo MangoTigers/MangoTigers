@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
 
-    --color0: 100%;
+    --invertProsent: 100%;
     --color1: #1a202c;
     --color2: #2d3748;
     --color3: #4a5568;
@@ -11,16 +11,17 @@ body {
     --color5: #a0aec0;
 
     background-color: var(--color3);
+    transition: height 0.3s ease
 }
 
 
 body.light {
-    --color0: 0%;
+    --invertProsent: 0%;
     --color1: #787878;
     --color2: #ababab;
     --color3: #e3e3e3;
     --color4: #e7e7e7;
-    --color5: #a0aec0;
+    --color5: #242424;
 }
 
 .meny {
@@ -114,12 +115,13 @@ body.light {
 }
 
 .byttFarge {
-    float: right;
-    margin: 10px;
+    position: fixed;
+    right: 15px;
+    bottom: 14%;
 }
 
 .byttFarge img{
-    filter: invert(var(--color0));
+    filter: invert(var(--invertProsent));
     cursor: pointer;
     width: 100px;
     height: auto;
@@ -127,6 +129,14 @@ body.light {
 
 .scroll .byttFarge{
     display: none;
+}
+
+.spacer {
+    height: 90vh;
+}
+
+.meny.scroll ~ .spacer {
+    height: 230px;
 }
 
 .nedIkon {
@@ -145,4 +155,45 @@ body.light {
 /* Hide the nedIkon when the meny is scrolled */
 .meny.scroll ~ .nedIkon {
     opacity: 0;
+}
+
+.innholdBoks {
+    display: block;
+    margin-bottom: clamp(10px, 5vw, 100px);
+    margin-inline: clamp(5px, 5vw, 100px);
+    background-color: var(--color1);
+    border-radius: 10px;
+}
+
+.innholdBoks h1 {
+    color: var(--color5);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    text-align: center;
+    border-bottom: var(--color3) 1px solid;
+    width: 40%;
+    font-size: 3rem;
+}
+
+.innhold {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.innhold p {
+    color: var(--color5);
+
+    font-size: 1.2rem;
+}
+
+.innhold img {
+    width: clamp(100px, 40vw, 600px);
+    height: auto;
+    justify-self: end;
+
+    border-radius: 5px;
+    box-shadow: var(--color5) 3px 3px 10px;
 }
