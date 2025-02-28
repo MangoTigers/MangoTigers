@@ -192,8 +192,31 @@ body.light {
 .innhold img {
     width: clamp(100px, 40vw, 600px);
     height: auto;
-    justify-self: end;
-
     border-radius: 5px;
     box-shadow: var(--color5) 3px 3px 10px;
+}
+
+.alternativer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.alternativ {
+    display: block;
+    width: clamp(100px, 28vw, 600px);
+    background-color: var(--color2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .alternativer {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+
+    .alternativ {
+        width: clamp(100px, 80vw, 600px);
+    }
 }

@@ -32,9 +32,47 @@
         
     </div>
 
+    <div class="innholdBoks" id="kjopsguide">
+        <h1>Velg Ditt Bruksområdet</h1>
+        <div class="alternativer">
+            <div class="alternativ" onclick="window.location.href = 'produktSide.html';">
+                <img src="bilder/pc1.png" alt="PC">
+                <p>PC 1</p>
+            </div>
+            <div class="alternativ">
+                <img src="bilder/pc2.png" alt="PC">
+                <p>PC 2</p>
+            </div>
+            <div class="alternativ">
+                <img src="bilder/pc3.png" alt="PC">
+                <p>PC 3</p>
+            </div>
+        </div>
+    </div>
+
     <div style="height: 10000px;"></div>
 
     <script>
+            // Add offset to anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+
+                    const targetId = this.getAttribute('href'); // Get the target ID (e.g., "#hjem")
+                    const targetElement = document.querySelector(targetId); // Find the target element
+
+                    if (targetElement) {
+                        const offset = 120; // Adjust this value to set the desired offset (in pixels)
+                        const targetPosition = targetElement.offsetTop - offset; // Calculate the target position with offset
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth' // Add smooth scrolling
+                        });
+                    }
+                });
+            });
+
 
         document.querySelector(".byttFarge").addEventListener("click", function() { 
             document.body.classList.toggle("light");
