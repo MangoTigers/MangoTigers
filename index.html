@@ -8,15 +8,37 @@
     <title>HiTek</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li class="logo"><a href="#hjem"><img src="bilder/logo.png" alt="Logo, Hjemknappen"></a></li>
-            <li><a href="#kjopsguide">Kjøpsguide</a></li>
-            <li><a href="#omoss">Om oss</a></li>
-            <li><a href="#sporsmal">Spørsmål</a></li>
-            <li><a href="#kontaktoss">Kontakt oss</a></li>
-            <li class="byttFarge"><img src="bilder/byttFarge.png" alt="bytt Farge"></li>
-        </ul>
-    </nav>
+    <div id="hjem"></div>
+        <div class="meny">
+            <div class="logo"><a href="#hjem"><img class="logoBilde" src="bilder/logo.png" alt="Logo, Hjemknappen"></a></div>
+            <div class="knapper">
+            <div class="menyElement"><a class="menyTekst" href="#kjopsguide">Kjøps guide</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#omoss">Om oss</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#sporsmal">Spørsmål</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#kontaktoss">Kontakt oss</a></div>
+            <div class="byttFarge"><img src="bilder/byttFarge.png" alt="bytt Farge"></div>
+        </div>
+    </div>
+    <div class="nedIkon"><img src="bilder/ned.png" alt=""></div>
+
+    <div style="height: 1400px;"></div>
+
+    <script>
+
+        document.querySelector(".byttFarge").addEventListener("click", function() { 
+            document.body.classList.toggle("light");
+            console.log("dd")
+        });
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 100) {
+                document.querySelector(".meny").classList.add("scroll");
+                document.querySelector(".meny").classList.remove("normal");
+            } else {
+                document.querySelector(".meny").classList.remove("scroll");
+                document.querySelector(".meny").classList.add("normal");
+            }
+        });
+    </script>
 </body>
 </html>
