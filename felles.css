@@ -25,6 +25,7 @@ body.light {
 }
 
 .meny {
+    user-select: none;
     display: block;
     position: fixed;
     width: 100%;
@@ -41,7 +42,6 @@ body.light {
 
 .meny.scroll {
     height: 100px; /* Set the height when scrolled */
-    background-color: var(--color2); /* Optional: Change background color on scroll */
 }
 
 .logo {
@@ -153,14 +153,14 @@ body.light {
     filter: contrast(50%);
 }
 
-/* Hide the nedIkon when the meny is scrolled */
+/* Hide the nedIkon when the meny is scrolled - ChatGPT*/
 .meny.scroll ~ .nedIkon {
     opacity: 0;
 }
 
 .innholdBoks {
     display: block;
-    margin-bottom: clamp(10px, 5vw, 100px);
+    margin-bottom: clamp(10px, 3vw, 100px);
     margin-inline: clamp(5px, 5vw, 100px);
     background-color: var(--color1);
     border-radius: 10px;
@@ -184,17 +184,19 @@ body.light {
     padding: 20px;
 }
 
+
+
 .innhold p {
     color: var(--color5);
-
-    font-size: 1.2rem;
+    padding-bottom: 30px;
+    font-size: clamp(1rem, 1.8vw, 1.6rem);
 }
 
 .innhold img {
     width: clamp(100px, 40vw, 600px);
     height: auto;
     border-radius: 5px;
-    box-shadow: var(--color5) 3px 3px 10px;
+    
 }
 
 .alternativer {
@@ -211,7 +213,28 @@ body.light {
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 600px) {
+.alternativ img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.alternativ p {
+    color: var(--color5);
+    padding: 10px;
+    text-align: center;
+    font-size: clamp(1rem, 1.8vw, 1.7rem);
+}
+
+@media screen and (max-width: 900px) {
+    .innhold {
+        flex-direction: column-reverse;
+    }
+
+    .innhold img {
+        width: clamp(100px, 82vw, 800px);
+    }
+
     .innholdBoks h1 {
         width: 80%;
     }
