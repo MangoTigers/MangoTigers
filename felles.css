@@ -74,7 +74,28 @@ body.light {
     text-decoration: none;
     border-bottom: var(--color2) 3px solid;
     width: 40%;
-    margin: 0 auto;
+    margin: auto;
+    transition: all 0.3s ease;
+}
+
+.menyElement a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: var(--color3);
+    text-decoration: none;
+    transition: all 0.s ease;
+}
+
+.menyElement a:hover {
+    transform: scale(1.1);
+    color: var(--color3);
+
+}
+
+.scroll .menyElement:hover {
+    transform: none;
 }
 
 .scroll .menyElement {
@@ -109,16 +130,19 @@ body.light {
     font-size: clamp(1rem, 1.8vw, 1.6rem);
 }
 
-.menyTekst:hover {
-    color: var(--color5);
-    text-decoration: underline;
-}
+
 
 .byttFarge {
     position: fixed;
     right: 15px;
     bottom: 14%;
+    transition: transform 0.3s ease;
 }
+
+.byttFarge:hover {
+    transform: scale(1.1);
+}
+
 
 .byttFarge img{
     filter: invert(var(--invertProsent));
@@ -161,7 +185,7 @@ body.light {
 .innholdBoks {
     display: block;
     margin-bottom: clamp(10px, 3vw, 100px);
-    margin-inline: clamp(5px, 5vw, 100px);
+    margin-inline: clamp(5px, 7vw, 100px);
     background-color: var(--color1);
     border-radius: 10px;
 }
@@ -175,6 +199,17 @@ body.light {
     border-bottom: var(--color3) 1px solid;
     width: 40%;
     font-size: 3rem;
+}
+
+.innholdBoks h2 {
+    color: var(--color5);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0px;
+    text-align: center;
+    border-bottom: var(--color3) 1px solid;
+    width: 80%;
+    font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
 .innhold {
@@ -197,7 +232,6 @@ body.light {
     width: clamp(100px, 40vw, 600px);
     height: auto;
     border-radius: 5px;
-    marg
 }
 
 .tekst{
@@ -208,14 +242,26 @@ body.light {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    margin-inline: clamp(5px, 5vw, 100px);
 }
 
 .alternativ {
     display: block;
-    width: clamp(100px, 28vw, 600px);
+    width: clamp(100px, 24vw, 600px);
     background-color: var(--color2);
     border-radius: 5px;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.alternativ:hover {
+    background-color: var(--color3);
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.alternativ:hover img {
+    filter: brightness(80%);
 }
 
 .alternativ img {
@@ -232,6 +278,10 @@ body.light {
 }
 
 @media screen and (max-width: 900px) {
+    .menyElement {
+        padding: 3px;
+    }
+
     .innhold {
         flex-direction: column-reverse;
     }
@@ -242,6 +292,10 @@ body.light {
 
     .innholdBoks h1 {
         width: 80%;
+    }
+
+    .text {
+        justify-self: center;
     }
 
     .alternativer {
