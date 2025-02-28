@@ -132,7 +132,7 @@ body.light {
 }
 
 .spacer {
-    height: 90vh;
+    height: 95vh;
 }
 
 .meny.scroll ~ .spacer {
@@ -141,15 +141,16 @@ body.light {
 
 .nedIkon {
     position: fixed; 
-    top: 93%; 
+    top: 90%; 
     left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.3s ease;
 }
 
 .nedIkon img {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: auto;
+    filter: contrast(50%);
 }
 
 /* Hide the nedIkon when the meny is scrolled */
@@ -211,6 +212,10 @@ body.light {
 }
 
 @media screen and (max-width: 600px) {
+    .innholdBoks h1 {
+        width: 80%;
+    }
+
     .alternativer {
         grid-template-columns: repeat(1, 1fr);
         justify-items: center;

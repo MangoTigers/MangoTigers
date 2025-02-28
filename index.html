@@ -50,8 +50,6 @@
         </div>
     </div>
 
-    <div style="height: 10000px;"></div>
-
     <script>
             // Add offset to anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -80,7 +78,7 @@
         });
 
         window.addEventListener("scroll", function() {
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 document.querySelector(".meny").classList.add("scroll");
                 document.querySelector(".meny").classList.remove("normal");
             } else {
