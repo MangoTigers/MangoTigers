@@ -25,6 +25,7 @@ body.light {
 }
 
 .meny {
+    z-index: 100;
     user-select: none;
     display: block;
     position: fixed;
@@ -212,6 +213,16 @@ body.light {
     font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
+.innholdBoks h3 {
+    color: var(--color5);
+    margin-right: auto;
+    padding-top: 0px;
+    text-align: left;
+    border-bottom: var(--color3) 1px solid;
+    width: 100%;
+    font-size: clamp(1.5rem, 1.7vw, 3rem);
+}
+
 .innhold {
     display: flex;
     flex-direction: row;
@@ -223,7 +234,13 @@ body.light {
 
 .innhold p {
     color: var(--color5);
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+    font-size: clamp(1rem, 1.8vw, 1.6rem);
+    padding-right: 30px;
+}
+
+.innhold li {
+    color: var(--color5);
     font-size: clamp(1rem, 1.8vw, 1.6rem);
     padding-right: 30px;
 }
@@ -236,6 +253,13 @@ body.light {
 
 .tekst{
     padding-right: 20px;
+}
+
+button {
+    border: none;
+    color: none;
+    margin: 0;
+    padding: 0;
 }
 
 .alternativer {
@@ -277,6 +301,11 @@ body.light {
     font-size: clamp(1rem, 1.8vw, 1.7rem);
 }
 
+.bildeMedTekst img {
+    width: 100%;
+}
+
+
 @media screen and (max-width: 900px) {
     .menyElement {
         padding: 3px;
@@ -284,10 +313,13 @@ body.light {
 
     .innhold {
         flex-direction: column-reverse;
+        justify-content: center;
     }
 
     .innhold img {
-        width: clamp(100px, 82vw, 800px);
+        width: clamp(200px, 100vw, 800px);
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .innholdBoks h1 {
@@ -300,10 +332,16 @@ body.light {
 
     .alternativer {
         grid-template-columns: repeat(1, 1fr);
-        justify-items: center;
+        justify-content: center;
+
     }
 
     .alternativ {
         width: clamp(100px, 80vw, 600px);
+    }
+
+    .alternativ p {
+        font-size: 2rem;
+        padding: 2px;
     }
 }
