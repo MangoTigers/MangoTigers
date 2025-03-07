@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="felles.css">
-    <title>HiTek</title>
+    <title>HiTek - Dubbing og Podkast</title>
 </head>
 <body>
     <div class="meny">
         <div class="logo"><a href="/index.html"><img class="logoBilde" src="bilder/logo.png" alt="Logo, Hjemknappen"></a></div>
         <div class="knapper">
-            <div class="menyElement"><a class="menyTekst" href="#">Velkommen</a></div>
-            <div class="menyElement"><a class="menyTekst" href="#">Kjøps guide</a></div>
-            <div class="menyElement"><a class="menyTekst" href="#">Om oss</a></div>
-            <div class="menyElement"><a class="menyTekst" href="#">Spørsmål</a></div>
-            <div class="menyElement"><a class="menyTekst" href="#">Kontakt oss</a></div>
+            <div class="menyElement"><a class="menyTekst" href="index.html">Hjem</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#lydkort">Lydkort</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#mikrofon">Mikrofon</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#stativer">Stativer</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#programvare">Programvare</a></div>
         </div>
     </div>
     <div class="spacer" style="height: 100px;"></div>  
@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="innholdBoks">
+    <div class="innholdBoks" id="lydkort">
         <h1>Lydkort</h1>
         <div class="innhold">
             <div class="tekst">
@@ -44,7 +44,7 @@
         </div>
     </div>
     
-    <div class="innholdBoks">
+    <div class="innholdBoks" id="mikrofon">
         <h1>Mikrofon</h1>
         <div class="innhold">
             <div class="tekst">
@@ -56,16 +56,16 @@
                     Denne mikrofonen er en av de mest populære og brukes av profesjonelle podcastere og youtubere. Den har en god lydkvalitet og er enkel å bruke. Den er også relativt billig med en pris på ca. 1 500 kr.
                 </p>
             </div>
-            <img src="bilder/mikrofon.webp" alt="Rode NT-USB Mikrofon">
+            <img src="bilder/mikrofon.webp" alt="Røde NT-USB Mikrofon">
         </div>
-        <div class="innhold" style="margin-top: 5vw;">
+        <div class="innhold" style="margin-top: 5vw;" id="stativer">
             <div class="tekst">
                 <h3 style="width: 40%;">Mikrofon stativ</h3>
                 <p>Hvis du ønsker et stativ bør du skaffe denne: <a href="https://www.scandinavianphoto.no/rode/ds1-desktop-microphone-stand-323085" target="_blank">Røde Mikrofon Stativ</a> Denne er justerbar i høyden så det er lettere å bruke. </p>
 
                 <p>Hvis du ønsker å bruke denne er det viktig at du kjøper en ekstra kabel som denne: <a href="https://www.scandinavianphoto.no/pulse/mikrofonkabel-xlr-han---xlr-hun-3-meter-1013745" target="_blank">XLR Mikrofonkabel 3m</a></p>
             </div>
-            <img src="bilder/mikrofonstativ.webp" alt="">
+            <img src="bilder/mikrofonstativ.webp" alt="Røde Mikrofonstativ">
         </div>
 
         <div class="innhold" style="margin-top: 5vw;">
@@ -83,11 +83,11 @@
                     <li>C-klemme for bordplate</li>
                 </ul>
             </div>
-            <img src="bilder/mikrofonarm.webp" alt="">
+            <img src="bilder/mikrofonarm.webp" alt="Røde Mikrofonarm">
         </div>
     </div>
 
-    <div class="innholdBoks">
+    <div class="innholdBoks" id="programvare">
         <h1>Programvare</h1>
         <div class="innhold">
             <div class="tekst">
@@ -99,7 +99,7 @@
                 <h3>Adobe Audition</h3>
                 <p>Adobe Audition er et av de mest populære programmene for lydredigering og -produksjon. En guide for hvordan man bruker den kan finnes på: <a href="https://helpx.adobe.com/no/support/audition.html" target="_blank">Adobe Support Audition</a></p>
             </div>
-            <img src="bilder/adobeAudition.png" alt="" style="width: 100px; height: 100px;">
+            <img src="bilder/adobeAudition.png" alt="Adobe Audition ikon" style="width: 100px; height: 100px;">
         </div>
 
         <div class="innhold" style="margin-top: 5vw;">
@@ -107,7 +107,7 @@
                 <h3>Adobe Premier Pro</h3>
                 <p>Adobe Premiere Pro er et profesjonelt videoredigeringsprogram som er en del av Adobe Creative Cloud. Det er et av de mest populære programmene for videoredigering og -produksjon. En guide for hvordan man bruker den kan finnes på: <a href="https://helpx.adobe.com/no/premiere-pro/get-started.html" target="_blank">Adobe Support Premier Pro</a></p>
             </div>
-            <img src="bilder/adobePremier.png" alt="" style="width: 100px; height: 100px;">
+            <img src="bilder/adobePremier.png" alt="Adobe Premier Pro ikon" style="width: 100px; height: 100px;">
         </div>
         </div>
     </div>
@@ -116,16 +116,43 @@
 
 
     <script>
-        // Legg til onstart-funksjon
+                            // Add offset to anchor links
+            // Add offset to anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        const targetId = this.getAttribute('href'); // Get the target ID (e.g., "#hjem")
+        const targetElement = document.querySelector(targetId); // Find the target element
+
+        if (targetElement) {
+            const baseOffset = 120; // Base offset (adjust as needed)
+            const meny = document.querySelector('.meny');
+
+
+            // Calculate the target position
+            let targetPosition = targetElement.offsetTop - baseOffset;
+
+            // Add extra offset if .scroll is not applied
+            
+            // Scroll to the calculated position
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth' // Add smooth scrolling
+            });
+        }
+    });
+});
+
         window.addEventListener("DOMContentLoaded", function() {
             menyScroll();
         });
-        // Fargebyttefunksjon
+        
         document.querySelector(".byttFarge").addEventListener("click", function() { 
             document.body.classList.toggle("light");
         });
 
-        // Meny scroll-effekt
+        
         function menyScroll() {
             document.querySelector(".meny").classList.add("scroll");
         }
