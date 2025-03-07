@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="felles.css">
+    <title>HiTek - Gaming PC</title>
+</head>
+<body>
+    <div class="meny">
+        <div class="logo"><a href="/index.html"><img class="logoBilde" src="bilder/logo.png" alt="Logo, Hjemknappen"></a></div>
+        <div class="knapper">
+            <div class="menyElement"><a class="menyTekst" href="#laptop">Laptop</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#">Kjøps guide</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#">Om oss</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#">Spørsmål</a></div>
+            <div class="menyElement"><a class="menyTekst" href="#">Kontakt oss</a></div>
+        </div>
+    </div>
+    <div class="spacer" style="height: 100px;"></div>  
+    <div class="innholdBoks">
+        <h1 style="width: 60%;">Gaming PC</h1>
+        <div class="innhold">
+            <div class="tekst">
+                <p>For gaming er det noen viktige komponenter du trenger for å sikre en effektiv spillopplevelse: en god PC med rask prosessor, god grafikk, og raskt lagring. I denne guiden fokuserer vi på de beste komponentene for gaming.</p>
+            </div>
+            <img src="bilder/gamingpc.png" alt="">
+        </div>
+    </div>
+
+    <div class="innholdBoks" id="laptop">
+        <h1>PC</h1>
+        <div class="innhold">
+            <div class="tekst">
+                <p>En god gaming-PC skal ha en rask prosessor, god grafikk, og raskt lagring. Derfor anbefaler jeg:
+                    <a href="https://www.elkjop.no/product/pc-datautstyr-og-kontor/pc/gaming-pc/asus-tuf-gaming-fx505dt-ryzen-7-3750h-16gb-512gb-nvme-ssd-gtx-1660-ti-6gb-15-6-fhd-144hz-1920x1080-1920x1080-768gb-ssd-2-5-1tb-hdd- windows-10-home-64bit/134111" target="_blank">ASUS TUF Gaming FX505DT Ryzen 7 3750H/16GB/512GB NVMe SSD/GTX 1660 Ti 6GB/15.6" FHD/144Hz</a>
+                </p>
+
+                <p>
+                    Denne PC-en er perfekt for gaming, med en AMD Ryzen 7 3750H-prosessor, 16 GB DDR4 RAM, 512 GB M.2 NVMe SSD for rask ytelse og en NVIDIA GeForce GTX 1660 Ti-grafikkort for jevn visuell ytelse. 
+                </p>
+
+                <ul>
+                    <li>Den har moderne tilkoblinger som:</li>
+                    <ul>
+                        <li>Thunderbolt 3</li>
+                        <li>WiFi-6E</li>
+                        <li>HDMI</li>
+                        <li>USB-A</li>
+                    </ul>
+                    <li>HD-webkamera og stereohøyttalere</li>
+                    <li>51 Wh Li-ion-batteriet gir god batteritid for en hel spillopplevelse</li>
+                </ul>
+            </div>
+            <img src="bilder/gamingpc.avif" alt="ASUS TUF Gaming FX505DT Ryzen 7 3750H/16GB/512GB NVMe SSD/GTX 1660 Ti 6GB/15.6" FHD/144Hz">
+        </div>
+    </div>
+    
+    <div class="innholdBoks">
+        <h1>Tastatur & Mus</h1>
+        <div class="innhold">
+            <div class="tekst">
+                <h2 style="width: 100%;">Tastatur</h3>
+                <p>Når man skal velge et tastatur er det viktig å tenke på helsa, derfor har jeg valg denne: <a href="https://www.elkjop.no/product/pc-datautstyr-og-kontor/pc-tilbehor/mus-tastatur/tastatur/logitech-g512-lightsync-rgb-mekanisk-tastatur/135183" target="_blank">Logitech G512 Lightsync RGB</a></p>
+
+                <p>Logitech G512 Lightsync RGB er en mekanisk tastatur som er perfekt for gaming. Den har en RGB-belysning som kan justeres etter dine behov, og en delvis ergonomisk design som beskytter håndleddene dine mot slitasje og smerte.</p>
+            </div>
+            <img src="bilder/tastaturGaming.avif" alt="Tastatur">
+        </div>
+        <div class="innhold" style="margin-top: 80px;">
+            <div class="tekst">
+                <h3 style="width: 60%;">Mus</h3>
+                <p>Akkurat som på tastaturet er det viktig å ha en ergonomisk mus hvis man skal bruke det over lang tid. Derfor har jeg valgt: <a href="https://www.elkjop.no/product/pc-datautstyr-og-kontor/pc-tilbehor/mus-tastatur/pc-mus/logitech-g502-lightspeed-wireless-mus/135184" target="_blank">Logitech G502 Lightspeed Wireless mus</a></p>
+            </div>
+            <img src="bilder/musGaming.avif" alt="Mus">
+        </div>
+
+    </div>
+
+
+    <script>
+                    // Add offset to anchor links
+            // Add offset to anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        const targetId = this.getAttribute('href'); // Get the target ID (e.g., "#hjem")
+        const targetElement = document.querySelector(targetId); // Find the target element
+
+        if (targetElement) {
+            const baseOffset = 120; // Base offset (adjust as needed)
+            const meny = document.querySelector('.meny');
+
+
+            // Calculate the target position
+            let targetPosition = targetElement.offsetTop - baseOffset;
+
+            // Add extra offset if .scroll is not applied
+            
+            // Scroll to the calculated position
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth' // Add smooth scrolling
+            });
+        }
+    });
+});
+
+        // Legg til onstart-funksjon
+        window.addEventListener("DOMContentLoaded", function() {
+            menyScroll();
+        });
+        // Fargebyttefunksjon
+        document.querySelector(".byttFarge").addEventListener("click", function() { 
+            document.body.classList.toggle("light");
+        });
+
+        // Meny scroll-effekt
+        function menyScroll() {
+            document.querySelector(".meny").classList.add("scroll");
+        }
+    </script>
+</body>
+</html>

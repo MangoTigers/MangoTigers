@@ -42,7 +42,7 @@ body.light {
 }
 
 .meny.scroll {
-    height: 100px; /* Set the height when scrolled */
+    height: 100px; 
 }
 
 .logo {
@@ -237,6 +237,10 @@ body.light {
     padding-bottom: 20px;
     font-size: clamp(1rem, 1.8vw, 1.6rem);
     padding-right: 30px;
+}
+
+.innhold a {
+    color: var(--color4);
 }
 
 .innhold li {

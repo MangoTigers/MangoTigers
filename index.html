@@ -48,15 +48,15 @@
     <div class="innholdBoks" id="kjopsguide">
         <h1 style="margin-bottom: 100px;">Kjøpsguide<br>Velg Ditt Bruksområdet</h1>
         <div class="alternativer">
-            <button class="alternativ" onclick="window.location.href = 'produktSide.html';">
+            <button class="alternativ" onclick="window.location.href = 'dubbingOgPodkast.html';">
                 <img src="bilder/dubbepc.png" alt="PC">
                 <p>Podcast og Dubbing</p>
             </button>
-            <button class="alternativ">
+            <button class="alternativ" onclick="window.location.href = 'kontorpc.html';">
                 <img src="bilder/kontorpc.png" alt="PC">
                 <p>Kontorarbeid</p>
             </button>
-            <button class="alternativ">
+            <button class="alternativ" onclick="window.location.href = 'gamingpc.html';" >
                 <img src="bilder/vrpc.png" alt="PC">
                 <p>Gaming</p>
             </button>
@@ -110,7 +110,24 @@
 
     <div class="innholdBoks" id="kontaktoss">
         <h1>Kontakt Oss</h1>
-        <div class="innhold"></div>
+        <div class="innhold">
+            <div class="tekst">
+                <h3>E-Mail</h3>
+                <p>kundeservice@hitek.no</p>
+            </div>
+            <div class="tekst">
+                <h3>Telefonnummer</h3>
+                <p>+47 123 45 678</p>
+            </div>
+            <div class="tekst">
+                <h3>Adresse</h3>
+                <p>HiTEK AS, Teknologiveien 10, 0123 Oslo, Norge</p>
+            </div>
+            <div class="tekst">
+                <h3>Åpningstider</h3>
+                <p>Mandag - Fredag: 09:00 - 17:00</p>
+            </div>
+        </div>
     </div>
 
     
@@ -154,7 +171,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         document.querySelector(".byttFarge").addEventListener("click", function() { 
             document.body.classList.toggle("light");
-            console.log("dd")
         });
 
         window.addEventListener("scroll", function() {
